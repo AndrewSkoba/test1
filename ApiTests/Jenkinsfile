@@ -1,6 +1,7 @@
 pipeline {
 	agent any
 	tools {
+	    maven 'maven jenkins'
         jdk 'JDK_11'
     }
 
