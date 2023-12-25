@@ -27,7 +27,7 @@ pipeline {
             script {
             	sh '''
                     echo 'execute post build'
-                    cp ApiTests/src/test/resources/environment.properties ApiTests/target/allure-results/environment.properties
+                    cp ApiTests/src/test/resources/environment.properties ApiTests/target/allure-results/
                     '''
             }
             cleanWs()
