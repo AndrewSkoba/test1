@@ -30,7 +30,7 @@ pipeline {
             script {
             	sh '''
                     echo 'execute post build'
-                    cp ApiTests/src/test/resources/environment.properties ApiTests/target/allure-results/
+                    cp ApiTests/src/test/resources/environment.properties ApiTests/target/allure-results/environment.properties
                     allure serve
                     '''
             }
