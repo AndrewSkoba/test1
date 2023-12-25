@@ -31,6 +31,7 @@ pipeline {
             	sh '''
                     echo 'execute post build'
                     cp ApiTests/src/test/resources/environment.properties ApiTests/target/allure-results/
+                    allure serve
                     '''
             }
             cleanWs()
