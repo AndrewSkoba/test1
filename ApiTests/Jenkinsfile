@@ -6,10 +6,17 @@ pipeline {
 
 
 	stages {
+	    stage ('Build') {
+                steps {
+                    sh '''
+                    mvn clean compile
+                    '''
+                }
+            }
 		stage ('Api Tests') {
             steps {
                 sh '''
-                mvn clean test
+                mvn test
                 '''
             }
         }
