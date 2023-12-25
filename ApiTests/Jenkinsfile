@@ -18,6 +18,7 @@ pipeline {
 		stage ('Api Tests') {
             steps {
                 sh '''
+                cd ApiTests
                 mvn test
                 '''
             }
