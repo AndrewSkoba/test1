@@ -2,10 +2,9 @@ pipeline {
 	agent any
 	tools {
 	    maven 'maven jenkins'
-	    allure 'Allure'
+	    allure 'allure'
         jdk 'JDK_11'
     }
-
 
 	stages {
 	    stage ('Build') {
@@ -24,17 +23,21 @@ pipeline {
                 '''
             }
         }
+	}
 
-             stage('Reports') {
-                steps {
-                   allure([
-              	   includeProperties: false,
-              	   jdk: '',
-              	   properties: [],
-              	   reportBuildPolicy: 'ALWAYS',
-              	   results: [[path: 'target/allure-results']]
-            	   ])
-          	        }
-                 }
+	post{
+	    always {
+		    stage('Reports') {
+                        steps {
+                           allure([
+                      	   includeProperties: false,
+                      	   jdk: '',
+                      	   properties: [],
+                      	   reportBuildPolicy: 'ALWAYS',
+                      	   results: [[path: 'ApiTests/target/allure-results']]
+                    	   ])
+                  	        }
+                         }
+	}
 	}
 }
