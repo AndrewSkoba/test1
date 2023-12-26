@@ -2,6 +2,7 @@ pipeline {
 	agent any
 	tools {
 	    maven 'maven jenkins'
+	    allure 'Allure'
         jdk 'JDK_11'
     }
 
