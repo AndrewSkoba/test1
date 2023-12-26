@@ -23,6 +23,9 @@ public class ApiTests extends BaseTest {
     @Feature("First Feature")
     @Test
     public void verifyBodyOfPertsStatusEndpoint() {
+
+        System.out.println("For Test");
+
         Root actualResult = executeCall();
         Root expectedData = buildTestData();
 
