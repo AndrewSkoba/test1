@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="APi Positive Suite" verbose="2" time-out="100000">
+    <test name="Positive">
+        <classes>
+            <class name="org.example.tests.ApiTests">
+                <methods>
+                    <include name="negativeTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
